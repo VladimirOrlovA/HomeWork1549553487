@@ -247,7 +247,7 @@ void Task3()
 
 int main()
 {
-	cout << "\n  05_02_2019Evening_1549379352 \n\n";
+	cout << "\n  07_02_2019_1549553487 \n\n";
 
 	setlocale(LC_ALL, "");
 	srand(time(NULL));
