@@ -40,8 +40,11 @@ void FillArray(char arr[], int n)
 
 void PrintArray(int arr[], int n)
 {
-	cout << endl << endl;
+	cout << "\nIndex ->\t";
+	for (int i = 0; i < n; i++)
+		cout << i << "  ";
 
+	cout << "\nElements ->\t";
 	for (int i = 0; i < n; i++)
 		cout << arr[i] << "  ";
 
@@ -50,8 +53,11 @@ void PrintArray(int arr[], int n)
 
 void PrintArray(float arr[], int n)
 {
-	cout << endl << endl;
+	cout << "\nIndex ->\t";
+	for (int i = 0; i < n; i++)
+		cout << i << "  ";
 
+	cout << "\nElements ->\t";
 	for (int i = 0; i < n; i++)
 		cout << arr[i] << "  ";
 
@@ -60,8 +66,11 @@ void PrintArray(float arr[], int n)
 
 void PrintArray(char arr[], int n)
 {
-	cout << endl << endl;
+	cout << "\nIndex ->\t";
+	for (int i = 0; i < n; i++)
+		cout << i << "  ";
 
+	cout << "\nElements ->\t";
 	for (int i = 0; i < n; i++)
 		cout << arr[i] << "  ";
 
@@ -105,16 +114,17 @@ void SearchNullArrPosition(T arr[], int &n)
 
 	int ind, i = 0;
 
-	cout << "Нулевые элементы массива -> ";
+	cout << "\nНулевые элементы массива -> \n";
 
 	for (i; i < n; i++)
 	{
 		if (arr[i] == 0)
 		{
 			ind = i;
-			cout << "\n A[" << ind << "]=" << arr[ind]<<endl;
+			cout << "\n A[" << ind << "]= " << arr[ind]<<endl;
 		}
 	}
+
 
 	cout << endl << endl;
 }
@@ -191,6 +201,19 @@ void AddLeftDigit(int& k, int d)
 
 }
 
+void XexpY(int x, int y)
+{
+	int b = 1, i = 0;
+
+	while (y > i)
+	{
+		if (y == 0) b = 1;
+		else b *= x;
+		i++;
+	}
+	cout << "\nРезультат возведения в степень -> \t"<<b;
+}
+
 
 void Task1()
 {
@@ -240,31 +263,28 @@ void Task3()
 	cout << "\n--------------------------------------------------------------------------\n\nTask2\n\n";
 	SetConsoleTextAttribute(hConsole, 7);
 
-	int count = 0, k = 0, d = 0;
+	int x, y;
 	char flag = 'n';
-
-	cout << "\nEnter number k -> \t\t";
-	cin >> k;
 
 	do
 	{
 		int check = 1;
-
+		cout << "\nВведите возводимое число в степень -> \t";
+		cin >> x;
 		do
 		{
-			cout << "\nEnter digit d" << count + 1 << " from 1 to 9 -> \t";
-			cin >> d;
+			cout << "\nВведите степень -> \t\t\t";
+			cin >> y;
 
-			if (d >= 1 && d <= 9) check = 0;
-			else cout << "\nWrong input, try again \n" << endl;
+			if (y >= 0) check = 0;
+			else cout << "\nВы ввели отрицательное число степени. Попробуйте еще раз... \n" << endl;
 
 		} while (check);
 
-		count++;
+	
+		XexpY(x, y);
 
-		AddLeftDigit(k, d);
-
-		cout << "\n\nDo You want enter one more digit? (y/n) -> ";
+		cout << "\n\nВы хотите повторить? (y/n) -> ";
 		cin >> flag;
 
 	} while (flag == 'y');
