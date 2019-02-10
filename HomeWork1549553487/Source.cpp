@@ -99,7 +99,6 @@ void SearchMaxArrPosition(T arr[], int &n)
 	cout << "Максимальный элемент массива A[" << ind <<"]="<< arr[ind]<< endl << endl;
 }
 
-
 template<typename T>
 void ReorderingArray(T arr[], int n)
 {
@@ -247,7 +246,10 @@ void Task3()
 
 int main()
 {
-	cout << "\n  07_02_2019_1549553487 \n\n";
+	SetConsoleTextAttribute(hConsole, 10);
+	cout << "\n  07_02_2019  1549553487 \n\n";
+	SetConsoleTextAttribute(hConsole, 7);
+	
 
 	setlocale(LC_ALL, "");
 	srand(time(NULL));
