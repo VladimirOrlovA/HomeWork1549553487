@@ -19,7 +19,7 @@ void FillArrayOrder(int arr[], int n)
 void FillArray(int arr[], int n)
 {
 	for (int i = 0; i < n; i++)
-		arr[i] = 1 + rand() % 9;
+		arr[i] = 0 + rand() % 9;
 }
 
 void FillArray(float arr[], int n)
@@ -97,6 +97,26 @@ void SearchMaxArrPosition(T arr[], int &n)
 	}
 
 	cout << "Максимальный элемент массива A[" << ind <<"]="<< arr[ind]<< endl << endl;
+}
+
+template<typename T>
+void SearchNullArrPosition(T arr[], int &n)
+{
+
+	int ind, i = 0;
+
+	cout << "Нулевые элементы массива -> ";
+
+	for (i; i < n; i++)
+	{
+		if (arr[i] == 0)
+		{
+			ind = i;
+			cout << "\n A[" << ind << "]=" << arr[ind]<<endl;
+		}
+	}
+
+	cout << endl << endl;
 }
 
 template<typename T>
@@ -200,6 +220,14 @@ void Task2()
 	cout << "\n--------------------------------------------------------------------------\n\nTask2\n\n";
 	SetConsoleTextAttribute(hConsole, 7);
 
+	int n;
+	cout << "\nВведите размерность массива -> ";
+	cin >> n;
+	int *arr = new int[n];
+
+	FillArray(arr, n);
+	PrintArray(arr, n);
+	SearchNullArrPosition(arr, n);
 	
 
 }
