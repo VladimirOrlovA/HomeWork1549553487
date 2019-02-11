@@ -91,10 +91,10 @@ void SearchMax(T arr[], int n, T x)
 }
 
 template<typename T>
-void SearchMaxArrPosition(T arr[], int &n)
+void SearchMaxArrPosition(T arr[], int n, int &max)
 {
 	
-	int max = 0, ind, i = 0;
+	int ind, i = 0;
 
 	for (i; i < n; i++)
 	{
@@ -225,13 +225,14 @@ void Task1()
 	SetConsoleTextAttribute(hConsole, 7);
 		
 	int n;
+	int max = 0;
 	cout << "\n¬ведите размерность массива -> ";
 	cin >> n;
 	int *arr = new int[n];
 
 	FillArray(arr, n);
 	PrintArray(arr, n);
-	SearchMaxArrPosition(arr, n);
+	SearchMaxArrPosition(arr, n, max);
 	
 }
 
